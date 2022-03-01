@@ -1,6 +1,5 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import { Disqus } from "gatsby-plugin-disqus"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -35,7 +34,6 @@ const BlogPostTemplate = ({ data, location }) => {
           <Bio />
         </footer>
       </article>
-      <Disqus />
       <nav className="blog-post-nav">
         <ul
           style={{
