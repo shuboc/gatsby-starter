@@ -60,6 +60,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </li>
         </ul>
       </nav>
+      <div className="fb-comments" data-width="" data-numposts="5" data-lazy={true}></div>
     </Layout>
   )
 }
