@@ -9,6 +9,9 @@ const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
+  const href = window.location.protocol + "//" + window.location.host + window.location.pathname
+
+  console.log(href);
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -60,6 +63,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </li>
         </ul>
       </nav>
+      <div className="fb-comments" data-href={href} data-width="" data-numposts="5"></div>
     </Layout>
   )
 }
