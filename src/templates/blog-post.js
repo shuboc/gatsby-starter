@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
+import { FacebookProvider, Comments } from 'react-facebook'
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -9,6 +10,9 @@ const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
+  const href = window.location.protocol + "//" + window.location.host + window.location.pathname
+
+  console.log('href:', href);
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -60,6 +64,9 @@ const BlogPostTemplate = ({ data, location }) => {
           </li>
         </ul>
       </nav>
+      <FacebookProvider appId="1994883547264823">
+        <Comments href={href} />
+      </FacebookProvider>
     </Layout>
   )
 }
