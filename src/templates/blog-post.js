@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
+import commentBox from 'commentbox.io'
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -9,6 +10,10 @@ const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
+
+  React.useEffect(() =>{
+    commentBox('5722813881122816-proj')
+  }, [])
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -60,6 +65,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </li>
         </ul>
       </nav>
+      <div class="commentbox"></div>
     </Layout>
   )
 }
